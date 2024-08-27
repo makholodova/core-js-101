@@ -27,8 +27,16 @@
  *  21 => 'Fizz'
  *
  */
-function getFizzBuzz(/* num */) {
-  throw new Error('Not implemented');
+function getFizzBuzz(num) {
+  if (num % 15 === 0) {
+    return 'FizzBuzz';
+  } else if (num % 3 === 0) {
+    return 'Fizz'
+  } else if (num % 5 === 0) {
+    return 'Buzz'
+  } else {
+    return num;
+  }
 }
 
 
@@ -43,8 +51,16 @@ function getFizzBuzz(/* num */) {
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial(/* n */) {
-  throw new Error('Not implemented');
+function getFactorial(n) {
+  if (n === 0 || n === 1) return 1;
+
+  let i = 1;
+  let result = 1;
+  while (i <= n) {
+    result *= i;
+    i++;
+  }
+  return result;
 }
 
 
@@ -60,8 +76,12 @@ function getFactorial(/* n */) {
  *   5,10  =>  45 ( = 5+6+7+8+9+10 )
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
-function getSumBetweenNumbers(/* n1, n2 */) {
-  throw new Error('Not implemented');
+function getSumBetweenNumbers(n1, n2) {
+  let result = 0;
+  for (let i = n1; i <= n2; i++) {
+    result += i;
+  }
+  return result;
 }
 
 
@@ -80,8 +100,8 @@ function getSumBetweenNumbers(/* n1, n2 */) {
  *   10,1,1   =>  false
  *   10,10,10 =>  true
  */
-function isTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isTriangle(a, b, c) {
+  return (a + b) > c && (a + c) > b && (b + c) > a;
 }
 
 
@@ -225,8 +245,9 @@ function reverseString(/* str */) {
  *   87354 => 45378
  *   34143 => 34143
  */
-function reverseInteger(/* num */) {
-  throw new Error('Not implemented');
+function reverseInteger(num) {
+  let result = num.toString().split('').reverse().join('');
+  return parseInt(result);
 }
 
 
@@ -268,7 +289,27 @@ function isCreditCardNumber(/* ccn */) {
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
-function getDigitalRoot(/* num */) {
+function getDigitalRoot(/*num*/) {
+ /* console.log(num);
+  let result = 0;
+  while (num !== 0) {
+    result += num % 10;
+    num = Math.floor(num / 10);
+    console.log(num);
+  }
+  console.log(result)
+if (result/10 !==0){
+  let result2 = 0;
+  while (result !== 0) {
+    result2 += result % 10;
+    result = Math.floor(result / 10);
+    console.log(result2);
+
+  }
+  return result2;
+}
+  return result;
+*/
   throw new Error('Not implemented');
 }
 
