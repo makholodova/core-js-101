@@ -66,7 +66,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-  return value.replace(/Hello, |!/g, "");
+  return value.replace(/Hello, |!/g, '');
 }
 
 
@@ -143,7 +143,7 @@ function removeFirstOccurrences(str, value) {
  */
 function unbracketTag(str) {
   return str.slice(1, -1);
-  //return str.replace(/<|>/g, '');
+  // return str.replace(/<|>/g, '');
 }
 
 
@@ -204,9 +204,9 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-  let top = "┌" + '─'.repeat(width - 2) + "┐" + '\n';
-  let middle = "│" + ' '.repeat(width - 2) + "│" + '\n';
-  let bottom = "└" + '─'.repeat(width - 2) + "┘" + '\n';
+  const top = `┌${'─'.repeat(width - 2)}┐\n`;
+  const middle = `│${' '.repeat(width - 2)}│\n`;
+  const bottom = `└${'─'.repeat(width - 2)}┘\n`;
   return top + middle.repeat(height - 2) + bottom;
 }
 
@@ -227,7 +227,7 @@ function getRectangleString(width, height) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13( /*str*/) {
+function encodeToRot13(/* str */) {
   throw new Error('Not implemented');
 }
 
@@ -245,9 +245,9 @@ function encodeToRot13( /*str*/) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  if (value instanceof String || typeof value == 'string') {
-    return true
-  } else return false;
+  if (value instanceof String || typeof value === 'string') {
+    return true;
+  } return false;
 }
 
 
@@ -275,16 +275,15 @@ function isString(value) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId( value ) {
-
-  /*[0-12]
+function getCardId(/* value */) {
+  /* [0-12]
   * [13-25]
   * [26-38]
-  * [39-51]*/
-  /*console.log (value);
+  * [39-51] */
+  /* console.log (value);
   console.log (value.length);
 
-  return value.trim()*/
+  return value.trim() */
   throw new Error('Not implemented');
 }
 

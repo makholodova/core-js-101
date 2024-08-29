@@ -30,13 +30,12 @@
 function getFizzBuzz(num) {
   if (num % 15 === 0) {
     return 'FizzBuzz';
-  } else if (num % 3 === 0) {
-    return 'Fizz'
-  } else if (num % 5 === 0) {
-    return 'Buzz'
-  } else {
-    return num;
+  } if (num % 3 === 0) {
+    return 'Fizz';
+  } if (num % 5 === 0) {
+    return 'Buzz';
   }
+  return num;
 }
 
 
@@ -58,7 +57,7 @@ function getFactorial(n) {
   let result = 1;
   while (i <= n) {
     result *= i;
-    i++;
+    i += 1;
   }
   return result;
 }
@@ -78,7 +77,7 @@ function getFactorial(n) {
  */
 function getSumBetweenNumbers(n1, n2) {
   let result = 0;
-  for (let i = n1; i <= n2; i++) {
+  for (let i = n1; i <= n2; i += 1) {
     result += i;
   }
   return result;
@@ -246,8 +245,8 @@ function reverseString(/* str */) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-  let result = num.toString().split('').reverse().join('');
-  return parseInt(result);
+  const result = num.toString().split('').reverse().join('');
+  return parseInt(result, 10);
 }
 
 
@@ -289,8 +288,8 @@ function isCreditCardNumber(/* ccn */) {
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
-function getDigitalRoot(/*num*/) {
- /* console.log(num);
+function getDigitalRoot(/* num */) {
+  /* console.log(num);
   let result = 0;
   while (num !== 0) {
     result += num % 10;

@@ -51,8 +51,8 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/*value1, value2*/) {
-  //return (value1 + value2) / 2;
+function getAverage(/* value1, value2 */) {
+  // return (value1 + value2) / 2;
   throw new Error('Not implemented');
 }
 
@@ -182,7 +182,7 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-  let powTen = Math.pow(10, pow);
+  const powTen = 10 ** pow;
   return Math.round(num / powTen) * powTen;
 }
 
@@ -222,7 +222,7 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber( /*value, def*/) {
+function toNumber(/* value, def */) {
   throw new Error('Not implemented');
 }
 
