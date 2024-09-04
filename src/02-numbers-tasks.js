@@ -51,9 +51,8 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  // return (value1 + value2) / 2;
-  throw new Error('Not implemented');
+function getAverage(value1, value2) {
+  return (value1 / 2 + value2 / 2);
 }
 
 /**
@@ -71,9 +70,10 @@ function getAverage(/* value1, value2 */) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 }
+
 
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
@@ -110,8 +110,11 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  const scalarProductOfVectors = x1 * x2 + y1 * y2;
+  const v1Modal = Math.sqrt(x1 ** 2 + y1 ** 2);
+  const v2Modal = Math.sqrt(x2 ** 2 + y2 ** 2);
+  return Math.acos(scalarProductOfVectors / (v1Modal * v2Modal));
 }
 
 /**
@@ -203,8 +206,20 @@ function roundToPowerOfTen(num, pow) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  let i = 1;
+  let res = 0;
+  while (i <= n) {
+    if (n % i === 0) {
+      res += 1;
+    }
+    i += 1;
+  }
+
+  if (res > 2 || n <= 1) {
+    return false;
+  }
+  return true;
 }
 
 /**
